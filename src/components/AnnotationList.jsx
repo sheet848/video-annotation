@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatTime } from '../utils/formatTime'
 
 const AnnotationList = ({ annotations, onSeek }) => {
     return (
@@ -10,7 +11,7 @@ const AnnotationList = ({ annotations, onSeek }) => {
               className="p-2 border rounded cursor-pointer hover:bg-gray-100"
               onClick={() => onSeek(ann.timestamp)}
             >
-              <strong>{ann.timestamp.toFixed(2)}s:</strong> {ann.text}
+              <strong>{formatTime(ann.timestamp)}:</strong> {ann.text}
             </div>
           ))}
         </div>
