@@ -16,6 +16,14 @@ function App() {
     setAnnotations(prev => [...prev, { id: Date.now(), timestamp: currentTime, text }]);
   };
 
+  const handleEditAnnotation = (id, newText) => {
+    setAnnotations(prev => prev.map(a => a.id === id ? { ...a, text: newText } : a));
+  };
+
+  const handleDeleteAnnotation = (id) => {
+    setAnnotations(prev => prev.filter(a => a.id !== id));
+  };
+
   const handleSeek = (time) => {
     if (isYoutube && playerRef.current) {
       playerRef.current.seekTo(time, 'seconds');
@@ -80,7 +88,12 @@ function App() {
         )
       )}
       <AnnotationForm currentTime={currentTime} onAdd={handleAddAnnotation} />
-      <AnnotationList annotations={annotations} onSeek={handleSeek} />
+      <AnnotationList
+        annotations={annotations}
+        onSeek={handleSeek}
+        onEdit={handleEditAnnotation}
+        onDelete={handleDeleteAnnotation}
+      />
     </div>
   );
 }
