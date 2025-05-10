@@ -8,4 +8,3 @@ export function formatTime(seconds) {
       String(secs).padStart(2, '0')
     ].filter(Boolean).join(':');
   }
-  
