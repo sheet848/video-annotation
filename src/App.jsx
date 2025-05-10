@@ -24,6 +24,14 @@ function App() {
     setAnnotations(prev => prev.filter(a => a.id !== id));
   };
 
+  const handleCopyAnnotations = () => {
+    const filteredAnnotations = annotations.filter(a => videoUrl && a);
+    const data = JSON.stringify({ videoUrl, annotations: filteredAnnotations }, null, 2);
+    navigator.clipboard.writeText(data).then(() => {
+      alert('Annotations copied to clipboard');
+    });
+  };
+
   const handleSeek = (time) => {
     if (isYoutube && playerRef.current) {
       playerRef.current.seekTo(time, 'seconds');
@@ -94,6 +102,14 @@ function App() {
         onEdit={handleEditAnnotation}
         onDelete={handleDeleteAnnotation}
       />
+      <div className="mt-4">
+        <button
+          onClick={handleCopyAnnotations}
+          className="px-4 py-2 bg-green-600 text-white rounded"
+        >
+          Copy Annotations
+        </button>
+      </div>
     </div>
   );
 }
