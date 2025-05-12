@@ -24,7 +24,7 @@ export default function AnnotationList({ annotations, onSeek, onEdit, onDelete }
       {annotations.sort((a, b) => a.timestamp - b.timestamp).map((ann) => (
         <div
           key={ann.id}
-          className="p-2 border rounded hover:bg-gray-50 group"
+          className="p-2 border rounded hover:bg-gray-200 group"
         >
           <div className="flex justify-between items-start space-x-2">
             <div className="flex-1 cursor-pointer" onClick={() => onSeek(ann.timestamp)}>
