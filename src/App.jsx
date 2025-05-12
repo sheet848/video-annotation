@@ -72,9 +72,9 @@ function App() {
   }, [isYoutube]);
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <div className="mb-4 space-y-2">
-        <input type="file" accept="video/*" onChange={handleFileChange} />
+    <div className="p-4 max-w-4xl mx-auto bg-[#e3dfd4] rounded-2xl">
+      <div className="space-y-2 my-16">
+        <input type="file" accept="video/*" onChange={handleFileChange} className='cursor-pointer w-[220px] font-medium text-center bg-[#fff] p-[12px] rounded-[12px] hover:border-[1px] hover:border-[solid] hover:border-[blue]'/>
         <input
           type="text"
           placeholder="Paste YouTube URL"
@@ -105,7 +105,7 @@ function App() {
       <div className="mt-4">
         <button
           onClick={handleCopyAnnotations}
-          className="px-4 py-2 bg-green-600 text-white rounded"
+          className="px-4 py-2 bg-green-600 rounded text-[#17283c]"
         >
           Copy Annotations
         </button>
