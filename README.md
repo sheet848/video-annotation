@@ -1,58 +1,49 @@
-# Video Annotation Tool
+# 🎥 Video Annotation App
 
-## 🎯 **Goal**
+A modern web application that allows users to annotate videos with custom time-based notes. Built with React and Tailwind CSS, this app demonstrates interactive media handling, stateful components, and a responsive UI.
 
-A tool where users can upload/play a video and add annotations (text/tags/comments) at specific timestamps.
+## 🔗 Live Demo
 
----
+👉 [View Live App](https://video-annotation-chi.vercel.app/)
 
-## 🧱 **Core Features**
+## 📸 Overview
 
-1. **Video Playback**
+Users can:
 
-   * Upload or select a video (via `<input type="file">`)
-   * Standard controls: play, pause, seek
+- Play and pause a video
+- Add timestamped annotations
+- View, edit, and delete annotations
+- Jump to a video timestamp by clicking on a note
+- Copy annotations as JSON
 
-2. **Timestamped Annotations**
+## ⚙️ Tech Stack
 
-   * Capture current time on button press (`videoRef.current.currentTime`)
-   * Attach a comment/tag to that timestamp
+- ⚛️ **React** – UI built with reusable components
+- 🎨 **Tailwind CSS** – For utility-first styling and responsiveness
+- 🧠 **useRef** & **useState** – For DOM control and annotation logic
 
-3. **Annotation List Panel**
+## 🧠 Features
 
-   * Display annotations sorted by time
-   * Click to jump to specific timestamp in video
+- Timestamped video annotations
+- Click-to-jump functionality
+- Fully responsive layout
+- Minimal, distraction-free UI
 
-4. **Overlay Annotations (optional)**
-
-   * Show annotation on video at the right moment
-   * Fade out after a few seconds or on user dismiss
-
----
-
-## 🛠️ **Tech Stack**
-
-* **React** (Vite + Tailwind for setup)
-* **Zustand or Context API** for state management
-* **React Hook Form / Formik** for annotation input
-* **FileReader API** for local video playback
-* **Optional**: `react-player` for better video support (especially from URLs)
-
----
-
-## 🧠 **Component Breakdown**
+## 📁 Folder Structure
 
 ```
-App
-├── VideoPlayer (video element, ref, controls)
-├── AnnotationForm (input field + timestamp display)
-├── AnnotationList (list, clickable timestamps)
-└── Overlay (absolute-positioned floating annotation)
+src/
+├── assets/
+├── components/
+├── utils/
+├── App.css
+├── App.jsx
+├── index.css
+├── main.jsx
+
 ```
 
----
-
-## 💡 **Key Concepts & Hooks**
+## 💡 Key Concepts & Hooks
 
 | Feature                     | Approach / Hook                                        |
 | --------------------------- | ------------------------------------------------------ |
@@ -62,33 +53,14 @@ App
 | Show overlays briefly       | `setTimeout` for display timing                        |
 | Upload video                | `FileReader` and `URL.createObjectURL()`               |
 
----
+## 📬 Contact
 
-## 📁 **Data Structure Example**
+Feel free to connect or reach out:
 
-```js
-[
-  {
-    id: 1,
-    timestamp: 12.5,
-    text: "Scene change - highlight object",
-  },
-  {
-    id: 2,
-    timestamp: 34.7,
-    text: "Add note about color palette",
-  },
-]
-```
+- Portfolio: [sheetal-naik.vercel.app](https://sheetal-naik.vercel.app)
+- Email: [sheetalnaik310@gmail.com](mailto:sheetalnaik310@gmail.com)
+- LinkedIn: [linkedin.com/in/developer-sheetalnaik](https://linkedin.com/in/developer-sheetalnaik)
 
 ---
 
-## 🧪 **Stretch Features**
-
-* Tag filtering (`#character`, `#background`, etc.)
-* Annotation editing & deleting
-* Export annotations to JSON
-* Keyboard shortcuts (`A` to annotate, `→`/`←` to seek)
-* Snap to frame (approximate nearest second)
-* Zoom into video timeline (like a waveform editor)
-
+**Built with ❤️ by [Sheetal Naik]**
